@@ -22,7 +22,7 @@ $sql = "INSERT INTO buyer (Buyer_Name,Buyer_Password,Buyer_Email,Buyer_Contact,B
 VALUES ('$Name', '$Password', '$Email','$Contact','$Address')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  readfile('success.html');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
