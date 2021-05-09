@@ -32,7 +32,7 @@ body{
 }
 
 .new{
-  margin:20px;
+  margin:7%;
 }
 button{
   width:100%;
@@ -120,32 +120,31 @@ button{
         New Customer Registration Form
       </h2>
       <div class="field">
-        <label>Buyer Name</label>
-        <input type="text" name="Buyer Name" placeholder="Buyer Name">
+        <label>Customer Name</label>
+        <input type="text" name="Customer Name" placeholder="Enter Customer Name">
       </div>
   <div class="field">
-      <label>Buyer Password</label>
-      <input type="password" placeholder="Password" name="Buyer Password">
+      <label>Password</label>
+      <input type="password" placeholder="Enter Password" name="Customer Password">
     </div>
 
   <div class="field">
-    <label>Buyer Email</label>
-    <input type="email" placeholder="joe@schmoe.com" name="Buyer Email">
+    <label>Email</label>
+    <input type="email" placeholder="Enter Email" name="Customerer Email">
   </div>
-  <div class="field">
-   <div class="two fields">
-     <div class="field">
+     <!-- <div class="field">
        <label>Date</label>
        <input type="date" name="Date" placeholder="dd-mm-yyyy">
-     </div>
+     </div> -->
      <div class="field">
        <label>Address</label>
-       <input type="text" name="Address" placeholder="address">
+       <input type="text" name="Customer Address" placeholder="Enter Address">
      </div>
-   </div>
-  </div>
-
-  <button class="ui button" type="submit">Submit</button>
+     <div class="field">
+        <label>Contact No.</label>
+        <input type="number" name="Customer Contact" placeholder="Enter Contact No.">
+      </div>
+  <button class="ui secondary button" type="submit">Submit</button>
 </form>
 </div>
 </div>
@@ -169,32 +168,33 @@ button{
     </h2>
     <div class="field">
       <label>Seller Name</label>
-      <input type="text" name="last-name" placeholder="Buyer Name">
+      <input type="text" name="Seller Name" placeholder="Enter Name">
     </div>
 
 <div class="field">
-    <label>Seller Password</label>
-    <input type="password" placeholder="Password">
+    <label>Password</label>
+    <input type="password" name="Seller Password" placeholder="Enter Password">
   </div>
 
 <div class="field">
-  <label>Seller Email</label>
-  <input type="email" placeholder="joe@schmoe.com">
+  <label>Email</label>
+  <input type="email" placeholder="Enter Email" name="Seller email">
 </div>
-<div class="field">
- <div class="two fields">
-   <div class="field">
+   <!-- <div class="field">
      <label>Date</label>
-     <input type="date" name="date" placeholder="dd-mm-yyyy">
-   </div>
+     <input type="date" name="Seller Join Date" placeholder="dd-mm-yyyy">
+   </div> -->
    <div class="field">
      <label>Address</label>
-     <input type="text" name="address" placeholder="address">
+     <input type="text" name="Seller Address" placeholder="Enter Address">
    </div>
- </div>
-</div>
+   <div class="field">
+     <label>Contact No.</label>
+     <input type="number" name="Seller Contact" placeholder="Enter Contact No.">
+   </div>
 
-<button class="ui button" type="submit">Submit</button>
+
+<button class="ui secondary button" type="submit">Submit</button>
 </form>
 </div>
 </div>
@@ -203,7 +203,7 @@ button{
 </div>
 </div>
 </div>
-  <div class="page-login" style="margin:30px">
+  <div class="page-login" style="margin:9%;">
     <div class="ui centered grid container">
       <div class="nine wide column">
         <div class="ui fluid card">
@@ -211,17 +211,17 @@ button{
   <form class="ui form" method="POST">
     <h2 class="ui center aligned icon header">
       <i class="circular users icon"></i>
-      Sign up
+      Sign Up Page
     </h2>
   </form>
   <div class="new">
-  <button class="ui primary labeled icon button" type="submit" onclick="openNav()" style="height:100px;">
+  <button class="ui secondary labeled icon button" type="submit" onclick="openNav()">
     <i class="user plus icon"></i>
     Add New Customer
   </button>
 </div>
 <div class="new">
-  <button class="ui primary labeled icon button" type="submit" onclick="openNav1()" style="height:100px;">
+  <button class="ui secondary labeled icon button" type="submit" onclick="openNav1()">
     <i class="user plus icon"></i>
     Add New Seller
   </button>
