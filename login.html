@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
-  <script src="/assets/application.js" ></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
 
 </head>
-<body>
+<body style=" background-color:#666">
 
-<div class="page-login">
+<div class="page-login" style="margin:30px">
   <div class="ui centered grid container">
     <div class="nine wide column">
       <div class="ui fluid card">
         <div class="content">
         <form class="ui form" method="POST">
+          <h2 class="ui center aligned icon header">
+            <i class="circular users icon"></i>
+            Login
+          </h2>
           <div class="field">
             <label>Username</label>
             <input type="text" name="user" placeholder="User">
           </div>
+
           <div class="field">
             <label>Password</label>
             <input type="password" name="pass" placeholder="Password">
           </div>
+          <div class="field">
+            <label>Type</label>
+          <select class="ui dropdown">
+            <option value="1">Admin</option>
+            <option value="0">Seller</option>
+            <option value="0">Customer</option>
+          </select>
+        </div>
           <button class="ui primary labeled icon button" type="submit">
             <i class="unlock alternate icon"></i>
             Login
           </button>
+          <button class="ui primary labeled icon button" type="submit">
+            <a href="login1.html" style="color:white">Don't have an account/Sign up</a>
+          </button>
+        </a>
 
         </form>
         </div>

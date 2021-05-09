@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login1</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+  <script type="text/javascript">
+  function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+function openNav1() {
+document.getElementById("myNav1").style.height = "100%";
+}
+
+function closeNav1() {
+document.getElementById("myNav1").style.height = "0%";
+}
+</script>
+<style>
+
+.new{
+  margin:20px;
+}
+button{
+  width:100%;
+  height:50px;
+}
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.overlay a {
+  padding: 5px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+<body style=" background-color:#666">
+  <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <div class="page-login">
+      <div class="ui centered grid container">
+        <div class="nine wide column">
+          <div class="ui fluid card">
+            <div class="content">
+
+    <form class="ui form">
+      <h2 class="ui center aligned icon header">
+        New Customer Registration Form
+      </h2>
+  <div class="field">
+    <label>Buyer Id</label>
+    <input type="text" name="first-name" placeholder="Buyer Id">
+  </div>
+  <div class="field">
+      <label>Buyer Password</label>
+      <input type="password" placeholder="Password">
+    </div>
+  <div class="field">
+    <label>Buyer Name</label>
+    <input type="text" name="last-name" placeholder="Buyer Name">
+  </div>
+  <div class="field">
+    <label>Buyer Email</label>
+    <input type="email" placeholder="joe@schmoe.com">
+  </div>
+  <div class="field">
+   <div class="two fields">
+     <div class="field">
+       <label>Date</label>
+       <input type="date" name="date" placeholder="dd-mm-yyyy">
+     </div>
+     <div class="field">
+       <label>Address</label>
+       <input type="text" name="address" placeholder="address">
+     </div>
+   </div>
+  </div>
+
+  <button class="ui button" type="submit">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+<div id="myNav1" class="overlay">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+<div class="overlay-content">
+  <div class="page-login">
+    <div class="ui centered grid container">
+      <div class="nine wide column">
+        <div class="ui fluid card">
+          <div class="content">
+
+  <form class="ui form">
+    <h2 class="ui center aligned icon header">
+      New Seller Registration Form
+    </h2>
+<div class="field">
+  <label>Seller Id</label>
+  <input type="text" name="first-name" placeholder="Buyer Id">
+</div>
+<div class="field">
+    <label>Seller Password</label>
+    <input type="password" placeholder="Password">
+  </div>
+<div class="field">
+  <label>Seller Name</label>
+  <input type="text" name="last-name" placeholder="Buyer Name">
+</div>
+<div class="field">
+  <label>Seller Email</label>
+  <input type="email" placeholder="joe@schmoe.com">
+</div>
+<div class="field">
+ <div class="two fields">
+   <div class="field">
+     <label>Date</label>
+     <input type="date" name="date" placeholder="dd-mm-yyyy">
+   </div>
+   <div class="field">
+     <label>Address</label>
+     <input type="text" name="address" placeholder="address">
+   </div>
+ </div>
+</div>
+
+<button class="ui button" type="submit">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <div class="page-login" style="margin:30px">
+    <div class="ui centered grid container">
+      <div class="nine wide column">
+        <div class="ui fluid card">
+          <div class="content">
+  <form class="ui form" method="POST">
+    <h2 class="ui center aligned icon header">
+      <i class="circular users icon"></i>
+      Sign up
+    </h2>
+  </form>
+  <div class="new">
+  <button class="ui primary labeled icon button" type="submit" onclick="openNav()">
+    <i class="user plus icon"></i>
+    Add New Customer
+  </button>
+</div>
+<div class="new">
+  <button class="ui primary labeled icon button" type="submit" onclick="openNav1()">
+    <i class="user plus icon"></i>
+    Add New Seller
+  </button>
+</div>
+<button class="ui primary labeled icon button" type="submit"  >
+  <a href="login.html" style="color:white">Login Page</a>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
