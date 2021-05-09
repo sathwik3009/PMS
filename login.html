@@ -4,44 +4,72 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
-
+<style>
+    .field{
+        padding:10px;
+    }
+    body{
+        background-color: #37414b;
+        background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    }
+    .card{
+        border-radius: 10px;
+    }
+</style>
 </head>
-<body style=" background-color:#666">
-
-<div class="page-login" style="margin:30px">
+<body>
+<div class="ui secondary menu navbar" style="padding:3px; background-color:white;">
+    <!-- <a class="ui item">
+        <i class="shopping cart icon" size="big"></i>
+    </a> -->
+    <a class="ui item">
+    <h2>MedKart</h2></a>
+    <div class="right menu">
+        <a href="/" class="ui item">
+        <h4>Login</h4>
+        </a>
+        <a href="login1.html" class="ui item">
+        <h4>Signup</h4>
+        </a>
+    </div>
+</div>
+<div class="page-login main-body" style="margin:40px">
   <div class="ui centered grid container">
     <div class="nine wide column">
       <div class="ui fluid card">
         <div class="content">
-        <form class="ui form" method="POST">
+        <form class="ui large form" method="POST">
           <h2 class="ui center aligned icon header">
             <i class="circular users icon"></i>
-            Login
+            Login Page
           </h2>
           <div class="field">
-            <label>Username</label>
-            <input type="text" name="user" placeholder="User">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Enter Email">
           </div>
 
           <div class="field">
             <label>Password</label>
-            <input type="password" name="pass" placeholder="Password">
+            <input type="password" name="pass" placeholder="Enter Password">
           </div>
           <div class="field">
-            <label>Type</label>
+            <!-- <label>Type</label> -->
           <select class="ui dropdown">
-            <option value="1">Admin</option>
-            <option value="0">Seller</option>
-            <option value="0">Customer</option>
+            <option value="" >Select User Type</option>
+            <option value="Admin">Admin</option>
+            <option value="Seller">Seller</option>
+            <option value="Customer">Customer</option>
           </select>
         </div>
-          <button class="ui primary labeled icon button" type="submit">
-            <i class="unlock alternate icon"></i>
-            Login
-          </button>
-          <button class="ui primary labeled icon button" type="submit">
-            <a href="login1.html" style="color:white">Don't have an account/Sign up</a>
-          </button>
+        <div style="display:flex; justify-content:space-evenly; padding:10px;">
+            <button class="ui secondary button" type="submit">
+                <!-- <i class="unlock alternate icon"></i> -->
+                Login
+              </button>
+              <button class="ui inverted secondary button" type="submit" >
+                <a href="login1.html" style="color:white">Sign up</a>
+              </button>
+        </div>
         </a>
 
         </form>
