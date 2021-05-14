@@ -1,52 +1,53 @@
 <?php
-
+session_start(); 
+$err=''; 
 $servername = "localhost:3306";
 $username = "root";
 $password = "";
 $dbname = "pms";
-
-$login_err = "";
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$email=$_POST['email'];
+$password=$_POST['password'];
+$tableName=$_POST['tname'];
 $adminEmail = "admin123@gmail.com";
 $adminPassword = "adminpms123";
-$tableName = $_POST['tname'];
-$email = $_POST['email'];
-$password = $_POST['password'];
 
 if($tableName == 'Admin'){
     if($email== $adminEmail && $password==$adminPassword){
-      $login_err = "";
+      $_SESSION["user_email"]=$email;
+      $_SESSION["user_pwd"]=$password; 
       header("Location: ./admin.html");
     }
     else{
-        $login_err="Invalid Username or Password!";
-        // header("Location: ./error.html");
+        $err="Invalid Email or Password!";
     }
 }
 else{
     $em = $tableName."_Email";
     $ps = $tableName."_Password";
+    $id = $tableName."_ID";
     $tb = strtolower($tableName);
-    $query ="SELECT * FROM  $tb WHERE $em= '$email' AND $ps='$password'";
-    $result = mysqli_query($conn,$query);
-	$count  = mysqli_num_rows($result);
-	if($count==0) {
-		// echo "Invalid Username or Password!";
-    $login_err="Invalid Username or Password!";
-	} else {
-		if($tableName == "Buyer"){
+    $query = mysqli_query($conn,"SELECT * FROM  $tb WHERE $em= '$email' AND $ps='$password'");
+    $rows = mysqli_num_rows($query);
+    if ($rows == 1) {
+        $_SESSION['user_email']=$email; 
+        $_SESSION["user_pwd"]=$password; 
+        if($tableName == "Buyer"){
             header("Location: ./buyer.html");
         }
         else{
-            header("Location: ./customer.html");
+            header("Location: ./sell.php");
         }
-	}
+    } else {
+        $err = "Invalid Email or Password!";
+    }
+        
 }
 }
 ?>
@@ -89,8 +90,8 @@ else{
       <div class="ui fluid card">
         <div class="content">
         <?php 
-        if(!empty($login_err)){
-            echo '<div class="ui negative message">' . $login_err . '</div>';
+        if(!empty($err)){
+            echo '<div class="ui negative message">' . $err . '</div>';
         }        
         ?>
         <form class="ui large form" action="" method="post">
