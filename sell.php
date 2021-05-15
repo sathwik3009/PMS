@@ -114,7 +114,7 @@ th,td{
         <a href="newmed.php" class="ui item">
         <h4>New Stock</h4>
         </a>
-        <a href="/" class="ui item">
+        <a href="editstock.php" class="ui item">
         <h4>Edit Stock</h4>
         </a>
         <a href="/" class="ui item">
@@ -148,6 +148,7 @@ $query1 = "SELECT * FROM customer WHERE Customer_Email='$sessEmail'";
     while($row = $result->fetch_assoc()) {
       $tableId =  $row["Customer_ID"];
   }
+  $_SESSION["user_id"] = $tableId;
   // echo "$tableId";
   $query2 = "SELECT * FROM seller_medicines WHERE S_ID='$tableId'";
   $result = mysqli_query($conn, $query2);
@@ -194,7 +195,7 @@ $conn->close();
             </div>
             <p>Medicine Details Not Added</p></div>';
         }               
-  ?>   
+  ?>
 </div> 
 <script>
   function closeDiv1(){
