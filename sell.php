@@ -108,7 +108,7 @@ th,td{
     <a class="ui item">
     <h2><i class="shopping cart icon" size="big"></i>MedKart</h2></a>
     <div class="right menu">
-      <a href="/seller.html" class="ui item">
+      <a href="/sell.php" class="ui item">
         <h4>Home</h4>
         </a>
         <a href="newmed.php" class="ui item">
