@@ -89,6 +89,7 @@
         else{
             echo "<h1 style='color:white; margin:20px;'>Seller details having stock of $mname</h1>";
             $sno = 1;
+            $buy='Buy';
             echo "
             <table class='ui celled table'>
                 <thead>
@@ -97,6 +98,7 @@
                     <th>SELLER NAME</th>
                     <th>MEDICINE STOCK</th>
                     <th>PRICE PER QUANTITY</th>
+                    <th>BUY<th>
                 </tr>
                 </thead>
                 <tbody>
@@ -104,16 +106,22 @@
                 while($row = mysqli_fetch_array($result)){
                 echo "
                 <tr>
+                <form method='post' action='bill.php?SName=".$row['SName']."&&MName=".$mname."&&SID=".$row['S_ID']."&&MQ=".$row['MQuantity']."&&PPQ=".$row['PPQ']."'>
                     <td>" . $sno . "</td>
                     <td>" . $row['SName'] . "</td>
                     <td>" . $row['MQuantity'] . "</td>
                     <td>" . $row['PPQ'] . "</td>
+                    <td><button class='ui secondary button' type='submit'>
+                    ".$buy."
+                  </button></td>
+                  </form>
                 </tr>";
                 $sno++;
                 }
             echo "
             </tbody>
-            </table>";
+            </table>
+           ";
         }
         $conn->close();
         }
