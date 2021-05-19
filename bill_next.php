@@ -6,12 +6,12 @@ $amt = $q*$ppq;
 $total_amt = $amt + ($amt*8/100);
 $sname = $_SESSION['SName'];
 $mname = $_SESSION['MName'];
+$_SESSION['total_amt'] = $total_amt;
+$_SESSION['quantity'] = $q;
 $servername = "localhost:3306";
 $username = "root";
 $password = "";
 $dbname = "pms";
-$id="";
-$corr_mess="";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -22,15 +22,7 @@ while($row = mysqli_fetch_array($result)){
   $contact = $row['Seller_Contact'];
   $address = $row['Seller_Address'];
   $id = $row['Seller_ID'];
-}
-if($_SERVER['REQUEST_METHOD']=='POST'){
-  $sql = "INSERT INTO temp_purchase_order(PO_NO,SName,Seller_Password,Seller_Email,Seller_Contact,Seller_Address,Seller_ID)
-  VALUES ('$firstName', '$password', '$email','$contact','$address','$id')";  
-  if ($conn->query($sql) === TRUE) {
-      $corr_mess="Purchase Order has been Placed";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
+  $_SESSION['seller_id'] = $id;
 }
 $conn->close();
 ?>
@@ -55,8 +47,6 @@ $conn->close();
 .cont{
   display:flex;
   justify-content:space-around;
-  /* margin:5;
-  padding:5; */
 }
 .left_bill{
   text-align:left;
@@ -183,7 +173,7 @@ th,td{
         <td style="background-color:#37414b text-color:white;"><?php echo "$total_amt"?> Rs</td>
       </tr>
     </table>
-    <form action="" method="post">
+    <form action="order.php" method="post">
     <div class="field">
           <select name="pay_mode" class="ui dropdown">
             <option value="" >Select Mode of Payment</option>
